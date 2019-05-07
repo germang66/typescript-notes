@@ -22,7 +22,7 @@ tsc -v
 tsc file.ts
 ```
 
-* to compile and run typescrip code use ts-node
+* to compile and run typescript code use ts-node
 
 ```
 npm install --global ts-node
