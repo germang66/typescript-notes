@@ -94,3 +94,45 @@ class GenericCreator<T> {
 let creator = new GenericCreator<Bird>();
 let bird2 : Bird = creator.create(Bird);
 bird2.fly();
+
+
+//Conditional statement in typing
+type numberOrString<T> = T extends number ? number : string;
+function isNumberOrString<T>(input: numberOrString<T>) {
+    console.log(`numberOrString: ${input}`);
+}
+isNumberOrString<number>(1);
+//isNumberOrString<number>("test"); //throw error
+
+//distributed conditional types
+type dateOrNumberOrString<T> = 
+    T extends Date ? Date :
+    T extends number ? Date | number :
+    T extends string ? Date | number | string : never;
+
+
+//using a distributed type for the type of T (type of T can be either a string,
+// number, Date, or boolean)
+function compareValues<T extends string | number | Date | boolean>
+    (input: T, compareTo: dateOrNumberOrString<T>) {
+        console.log("do stuff..")
+    }
+
+compareValues(new Date(), new Date()); //Date can only be compare with Date
+compareValues(1, new Date()); //number can be compare with number or **Date**
+compareValues(1, 2);  //number can be compare with **number** or **Date**
+compareValues("1",1); //string can be compare with **number**, date or string
+compareValues("1",new Date());  //string can be compare with number, **date** or string
+compareValues("1","1"); //string can be compare with number, date or **string**
+//other combination will throw a error.
+
+
+//conditional type inference
+
+//keyof
+
+//keyof with number
+
+//mapped types
+
+//Partial, Readonly, Record, and Pick

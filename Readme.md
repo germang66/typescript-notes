@@ -29,6 +29,8 @@ npm install --global ts-node
 ts-node file.ts
 ```
 
+## Remove packages
+
 * remove global package
 
 ```
