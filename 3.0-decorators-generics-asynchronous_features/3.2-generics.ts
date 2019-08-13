@@ -96,7 +96,7 @@ let bird2 : Bird = creator.create(Bird);
 bird2.fly();
 
 
-//Conditional statement in typing
+//# Conditional statement in typing
 type numberOrString<T> = T extends number ? number : string;
 function isNumberOrString<T>(input: numberOrString<T>) {
     console.log(`numberOrString: ${input}`);
@@ -104,7 +104,7 @@ function isNumberOrString<T>(input: numberOrString<T>) {
 isNumberOrString<number>(1);
 //isNumberOrString<number>("test"); //throw error
 
-//distributed conditional types
+//# Distributed conditional types
 type dateOrNumberOrString<T> = 
     T extends Date ? Date :
     T extends number ? Date | number :
@@ -127,12 +127,54 @@ compareValues("1","1"); //string can be compare with number, date or **string**
 //other combination will throw a error.
 
 
-//conditional type inference
+//# Conditional type inference
+//defined a conditional type named MyInferred, check if our type has a or b property
+// if have infer the type of U from a or b property.
+type MyInferred<T> = T extends { a: infer U, b: infer U} ? U : T;
+type inferNumber = MyInferred<{a: number, b: number}>; //U is number
+let first : inferNumber = 1; // first is type number
 
-//keyof
+type inferNumString = MyInferred<{a: string, b: number}>;//U is string | number
+let second : inferNumString = "text"; //second is string or number
+second = 22; //second as number
 
-//keyof with number
 
-//mapped types
+//# keyof
+interface IBuild {
+    id: number,
+    address: string,
+    fax: string
+}
+// keyof generate a string literal type based on the properties of a given type.
+function usingKeyOf(key: keyof IBuild, value: IBuild) {
+    console.log(`${key}  : ${value[key]}`);
+}
 
-//Partial, Readonly, Record, and Pick
+let myBuild : IBuild = { id: 1, address: "address 1234", fax: "123123123" };
+usingKeyOf("id", myBuild);
+usingKeyOf("address", myBuild);
+usingKeyOf("fax", myBuild);
+
+//# keyof with number
+enum Geographic {
+    CONGO = 99,
+    BOLIVIA = 101
+}
+
+const capitals = {
+    [Geographic.CONGO] : "Brazzaville",
+    [Geographic.BOLIVIA]: "La Paz"
+}
+
+function getCapital<T, K extends keyof T>(key: K, map: T) : T[K] {
+    return map[key];
+}
+
+let capitalCongo = getCapital(Geographic.CONGO, capitals);
+console.log(`capitalCongo = ${capitalCongo}`);
+let capitalBolivia = getCapital(Geographic.BOLIVIA, capitals);
+console.log(`capitalBolivia = ${capitalBolivia}`);
+
+//# mapped types
+
+//# Partial, Readonly, Record, and Pick
