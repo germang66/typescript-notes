@@ -176,5 +176,33 @@ let capitalBolivia = getCapital(Geographic.BOLIVIA, capitals);
 console.log(`capitalBolivia = ${capitalBolivia}`);
 
 //# mapped types
+//basic interface with required properties
+interface IPropRequired {
+    a: string;
+    b: boolean;
+}
+//take all properties of type T and include in new type PropOptional,
+// all properties are in this type optional
+type IPropOptional<T> = {
+    [K in keyof T]?: T[K];
+}
+
+//we mapped the original type to other where the properties are optional
+let obj1 : IPropOptional<IPropRequired> = { a: "test", b: false };
+let obj2 : IPropOptional<IPropRequired> = { a: "test2" };
 
 //# Partial, Readonly, Record, and Pick
+//we use partial to create types same as the original but with optional properties
+type partialExample = Partial<IPropRequired>;
+
+//we use readonly to create types where all properties are readonly
+type readonlyExample = Readonly<IPropRequired>;
+
+//we use pick to create type that are a subset of properties from original type
+type examplePick = Pick<IPropRequired, "a">
+let obj5: examplePick = { a: "test"  }
+
+//we use record to create a new type by specifying a list of properties 
+// in this case two properties of type string
+type exampleRecord = Record<"d" | "f", string>;
+let obj4: exampleRecord = { d: "test", f: "test" };
