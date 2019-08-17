@@ -22,6 +22,12 @@ tsc -v
 tsc file.ts
 ```
 
+* traspile source and specify the output directory
+
+```
+tsc file.ts --out ../dist/file.js
+```
+
 * to compile and run typescript code use ts-node
 
 ```

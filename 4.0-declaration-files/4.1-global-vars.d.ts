@@ -1,0 +1,1 @@
+declare var ADDRESS_LIST: string[];
