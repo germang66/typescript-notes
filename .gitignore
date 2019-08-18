@@ -1,2 +1,3 @@
 dist/
 *.js
+!4.2-declaration-file-error-helper.js
