@@ -28,6 +28,23 @@ tsc file.ts
 tsc file.ts --out ../dist/file.js
 ```
 
+* initialize typescript project
+
+```
+tsc --init
+```
+
+## install declaration files
+
+* example using npm and @types
+
+```
+npm install underscore
+npm install @types/underscore
+```
+
+## using ts-node
+
 * to compile and run typescript code use ts-node
 
 ```
