@@ -4,6 +4,16 @@
 
 ## Setup
 
+#### download dependencies
+
+* project already created just download dependencies
+
+```
+npm install
+```
+
+#### start project
+
 * initialize typescript configuration 
 * start node project and download backbone dependencies
 

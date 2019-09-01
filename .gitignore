@@ -2,3 +2,4 @@ dist/
 *.js
 !4.0-declaration-files/*.js
 6.0-backbone/node_modules/
+7.0-react/node_modules/
