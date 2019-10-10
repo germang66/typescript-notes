@@ -1,0 +1,15 @@
+{
+  "name": "8.0-jasmine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jasmine": "^3.4.3",
+    "jasmine-reporters": "^2.3.2"
+  }
+}

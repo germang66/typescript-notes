@@ -60,3 +60,39 @@ ts-node file.ts
 npm -g rm typescript
 npm -g rm ts-node
 ```
+
+## Jasmine
+
+* behavior-driven javascript testing framework
+
+```
+npm install -g jasmine
+npm install @types/jasmine --save-dev
+npm install jasmine-reporters --save-dev
+```
+
+* jasmine-reporters: allow modified the output of each test suite given more datails.
+    * setup example: 8.0-jasmine/spec/helpers/attachTapReporter.js
+* ejecutar test
+
+```
+jasmine init
+//ó
+jasmine
+```
+
+* settings en `spec/support/jasmine.json`
+
+```
+{
+  "spec_dir": "spec",   /* test folder*/
+  "spec_files": [       
+    "**/*[sS]pec.js"    /*test file definition*/ 
+  ], 
+  "helpers": [ 
+    "helpers/**/*.js"   /* helpers methods*/ 
+  ], 
+  "stopSpecOnExpectationFailure": false,    /*dont stop if are some failure*/
+  "random": true        /*run test in random order*/
+}
+```
