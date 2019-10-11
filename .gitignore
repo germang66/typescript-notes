@@ -1,5 +1,7 @@
 dist/
 *.js
+!8.0-jasmine/spec/helpers/attachTapReporter.js
+!8.0-jasmine/html_spec/HtmlTests.spec.js
 !4.0-declaration-files/*.js
 6.0-backbone/node_modules/
 */node_modules/

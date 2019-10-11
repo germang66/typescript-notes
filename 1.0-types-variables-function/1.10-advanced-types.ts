@@ -82,6 +82,18 @@ console.log(`[1] ${t2}`); //# false
 let myTuple2: [string, boolean?] = ["test2"];
 console.log(`[0] ${myTuple2}`); //# test
 
+//Non-null assertion operator
+function notNullParam(e: string | null) {
+    function guard() {
+        if (e == null || e == undefined) e = 'noNAme';
+    }
+    guard();
+    let s = e!.toUpperCase();//indicate to ts that e cant be null
+    console.log(`not Null param ${s}`);
+}
+notNullParam("myName");
+notNullParam(null);
+
 //using tuples and rest in a function definition
 function foo4( ...args: [number, string, boolean]) {
     let [arg1, arg2, arg3] = args;

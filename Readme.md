@@ -96,3 +96,35 @@ jasmine
   "random": true        /*run test in random order*/
 }
 ```
+
+### typescript + jasmine 
+
+* run test (8.0 jasmine)
+  * require use jasmine installed in directory (not globally)
+
+```
+ts-node node_modules/jasmine/bin/jasmine
+```
+
+* script added into package.json
+
+```
+npm test
+```
+
+### jasmine HTML-based test
+
+* install dependencies
+* code example
+  * 8.0-jasmine/SpecRunner.html
+  * 8.0-jasmine/ html_spec/HtmlTests.spec.js
+
+```
+npm install jquery jasmine-jquery --save-dev
+```
+
+TODO
+=========
+
+* check file [TODO.md](./TODO.md)
+
