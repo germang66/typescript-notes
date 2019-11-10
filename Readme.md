@@ -2,6 +2,11 @@
 Notes Typescript
 ====================
 
+## content
+
+* [ES6 in TS](./ES6/ts-es6.ts)
+* [basics](./1.0-basics/basics.ts)
+
 ## code examples 
 
 * some are from 'Mastering Typescript 3 (Nathan Rozentals)'
