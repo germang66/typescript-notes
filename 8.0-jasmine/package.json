@@ -13,6 +13,6 @@
     "jasmine": "^3.5.0",
     "jasmine-jquery": "^2.1.1",
     "jasmine-reporters": "^2.3.2",
-    "jquery": "^3.4.1"
+    "jquery": "^3.5.0"
   }
 }
