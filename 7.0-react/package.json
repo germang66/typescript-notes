@@ -19,7 +19,7 @@
     "@types/underscore": "^1.9.2",
     "source-map-loader": "^0.2.4",
     "ts-loader": "^6.0.4",
-    "underscore": "^1.9.1",
+    "underscore": "^1.12.1",
     "webpack": "^4.39.3"
   }
 }
