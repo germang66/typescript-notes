@@ -12,7 +12,7 @@
     "@types/jasmine": "^3.4.3",
     "jasmine": "^3.5.0",
     "jasmine-jquery": "^2.1.1",
-    "jasmine-reporters": "^2.3.2",
+    "jasmine-reporters": "^2.5.0",
     "jquery": "^3.4.1"
   }
 }
